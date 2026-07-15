@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Incapto Blue | Análisis de datos para clínicas veterinarias</title>
+<meta name="description" content="Auditoría de facturación y análisis de datos para recuperar ingresos y fidelizar clientes en clínicas veterinarias.">
+
+</head>
+<body>
+
+
+
+<link rel="stylesheet" href="styles.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+  :root{
+    --color-accent:#3f7cf0;
+    --color-accent-100:#eef4ff;--color-accent-200:#d6e4ff;--color-accent-300:#aecaff;
+    --color-accent-400:#7aa5f7;--color-accent-500:#3f7cf0;--color-accent-600:#2560d6;
+    --color-accent-700:#1b47a3;--color-accent-800:#143371;--color-accent-900:#0f2448;
+    --ib-blue:#3f7cf0;--ib-blue-deep:#143371;--ib-cyan:#17b3c4;--ib-coral:#e07a4b;--ib-sage:#7a8a5e;
+  }
+  html{scroll-behavior:smooth;}
+  a{color:var(--ib-blue);}
+  a:hover{color:var(--color-accent-700);}
+  ::selection{background:color-mix(in srgb,var(--ib-blue) 26%,transparent);}
+</style>
+
+
+<div style="font-family:var(--font-body);color:var(--color-text);">
+
+  <!-- ══ NAV ══ -->
+  <nav style="position:sticky;top:0;z-index:30;display:flex;align-items:center;gap:20px;padding:16px 40px;background:color-mix(in srgb,var(--color-bg) 90%,transparent);backdrop-filter:blur(10px);">
+    <a href="#top" style="display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--color-text);margin-right:auto;">
+      <svg width="28" height="28" viewBox="0 0 48 48" aria-hidden="true"><rect x="5" y="29" width="9" height="13" rx="4.5" fill="#aecaff"></rect><rect x="19.5" y="20" width="9" height="22" rx="4.5" fill="#3f7cf0"></rect><rect x="34" y="9" width="9" height="33" rx="4.5" fill="#143371"></rect><circle cx="38.5" cy="4" r="4.5" fill="#e07a4b"></circle></svg>
+      <span style="font-family:var(--font-heading);font-size:19px;">incapto<span style="color:var(--ib-blue);">blue</span></span>
+    </a>
+    <a href="#servicios" style="color:inherit;text-decoration:none;font-size:14px;">Servicios</a>
+    <a href="#como" style="color:inherit;text-decoration:none;font-size:14px;">Cómo trabajamos</a>
+    <a href="#resultados" style="color:inherit;text-decoration:none;font-size:14px;">Resultados</a>
+    <a class="btn btn-primary" href="mailto:soporte@incaptoblue.com?subject=Quiero%20una%20auditor%C3%ADa%20gratuita" style="text-decoration:none;">Habla con nosotros</a>
+  </nav>
+
+  <!-- ══ HERO ══ -->
+  <header id="top" style="max-width:1180px;margin:0 auto;padding:60px 40px 40px;display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;">
+    <div>
+      <span class="tag" style="background:var(--color-accent-100);color:var(--color-accent-800);">Análisis de datos para clínicas veterinarias</span>
+      <h1 style="font-size:60px;line-height:1.02;margin:18px 0 0;">Tus datos ya saben dónde estás perdiendo dinero.</h1>
+      <p style="font-size:20px;max-width:560px;margin:20px 0 0;color:color-mix(in srgb,var(--color-text) 78%,transparent);">Auditamos la facturación de tu clínica, encontramos las fugas y te devolvemos acciones concretas para recuperar ingresos y fidelizar clientes. Sin jerga, sin departamento de datos.</p>
+      <div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:32px;align-items:center;">
+        <a class="btn btn-primary" href="mailto:soporte@incaptoblue.com?subject=Quiero%20una%20auditor%C3%ADa%20gratuita" style="text-decoration:none;font-size:16px;padding:14px 26px;">Pide tu auditoría gratuita</a>
+        <a class="btn btn-secondary" href="mailto:soporte@incaptoblue.com?subject=Tengo%20una%20pregunta" style="text-decoration:none;font-size:16px;padding:14px 26px;">Escríbenos con tu duda</a>
+      </div>
+      <p style="font-size:13px;margin-top:16px;color:color-mix(in srgb,var(--color-text) 55%,transparent);">Respuesta en menos de 24&nbsp;h · <a href="mailto:soporte@incaptoblue.com">soporte@incaptoblue.com</a></p>
+    </div>
+    <div style="position:relative;">
+      <div class="card elev-md" style="padding:26px;">
+        <span class="card-kicker" style="color:var(--ib-blue);">Diagnóstico de ejemplo</span>
+        <span class="card-title" style="font-size:19px;">Fugas detectadas este mes</span>
+        
+        <svg viewBox="0 0 340 196" style="width:100%;height:auto;margin-top:6px;">
+          <g stroke="#dcd3c4" stroke-width="1"><line x1="40" y1="24" x2="326" y2="24"/><line x1="40" y1="66" x2="326" y2="66"/><line x1="40" y1="108" x2="326" y2="108"/></g>
+          <g stroke="#a19786" stroke-width="1.5" stroke-linecap="round"><line x1="40" y1="16" x2="40" y2="150"/><line x1="40" y1="150" x2="326" y2="150"/></g>
+          <g font-family="Figtree,sans-serif" font-size="9" fill="#82796a" text-anchor="end"><text x="33" y="153">0</text><text x="33" y="111">25</text><text x="33" y="69">50</text><text x="33" y="27">75</text></g>
+          <g fill="#3f7cf0"><rect x="49" y="108" width="26" height="42" rx="8"/><rect x="97" y="92" width="26" height="58" rx="8"/><rect x="145" y="100" width="26" height="50" rx="8"/><rect x="193" y="70" width="26" height="80" rx="8"/><rect x="241" y="54" width="26" height="96" rx="8"/></g>
+          <rect x="289" y="26" width="26" height="124" rx="8" fill="#e07a4b"/>
+          <g font-family="Figtree,sans-serif" font-size="10" fill="#645c50" text-anchor="middle"><text x="62" y="172">Ene</text><text x="110" y="172">Feb</text><text x="158" y="172">Mar</text><text x="206" y="172">Abr</text><text x="254" y="172">May</text><text x="302" y="172">Jun</text></g>
+        </svg><div style="display:flex;justify-content:space-between;font-size:12px;color:color-mix(in srgb,var(--color-text) 65%,transparent);border-top:1px solid var(--color-divider);padding-top:12px;">
+          <span><strong style="color:var(--ib-coral);">+18,4%</strong> recuperable</span>
+          <span><strong style="color:var(--ib-blue);">12</strong> clientes en riesgo</span>
+        </div>
+      </div>
+      <div style="position:absolute;right:-24px;bottom:-24px;width:96px;height:96px;border-radius:50%;background:var(--color-accent-200);z-index:-1;"></div>
+    </div>
+  </header>
+
+  <!-- ══ CONFIANZA / DOLOR ══ -->
+  <section style="background:var(--ib-blue-deep);color:#fff;margin-top:40px;">
+    <div style="max-width:1180px;margin:0 auto;padding:56px 40px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:32px;text-align:center;">
+      <div><div style="font-family:var(--font-heading);font-size:44px;">1 de 4</div><p style="opacity:.85;font-size:15px;margin:6px 0 0;">clientes deja de venir sin que la clínica se dé cuenta a tiempo.</p></div>
+      <div><div style="font-family:var(--font-heading);font-size:44px;color:#7aa5f7;">−15%</div><p style="opacity:.85;font-size:15px;margin:6px 0 0;">de ingresos anuales se escapan en vacunas y revisiones no recordadas.</p></div>
+      <div><div style="font-family:var(--font-heading);font-size:44px;color:var(--ib-coral);">0€</div><p style="opacity:.85;font-size:15px;margin:6px 0 0;">cuesta la primera auditoría. Solo te pedimos tu tiempo.</p></div>
+    </div>
+  </section>
+
+  <!-- ══ SERVICIOS ══ -->
+  <section id="servicios" style="max-width:1180px;margin:0 auto;padding:80px 40px 0;scroll-margin-top:80px;">
+    <span class="tag tag-accent-2">Qué hacemos</span>
+    <h2 style="font-size:40px;margin:16px 0 8px;">Tres formas de recuperar facturación</h2>
+    <p style="font-size:18px;max-width:640px;color:color-mix(in srgb,var(--color-text) 72%,transparent);">Trabajamos en remoto con los datos que ya tienes. Tú sigues atendiendo animales; nosotros vigilamos los números.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin-top:36px;">
+      <div class="card elev-sm" style="padding:28px;">
+        <div style="width:52px;height:52px;border-radius:50%;background:var(--color-accent-100);display:grid;place-items:center;margin-bottom:6px;"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#3f7cf0" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"></path><path d="m19 9-5 5-4-4-3 3"></path></svg></div>
+        <span class="card-title" style="font-size:20px;">Auditoría de facturación</span>
+        <p class="card-body" style="opacity:1;font-size:15px;">Revisamos tus ingresos, detectamos las fugas y te decimos exactamente dónde y cuánto estás perdiendo.</p>
+        <a class="btn btn-ghost" href="mailto:soporte@incaptoblue.com?subject=Auditor%C3%ADa%20de%20facturaci%C3%B3n" style="text-decoration:none;align-self:flex-start;padding-left:0;">Solicitar auditoría →</a>
+      </div>
+      <div class="card elev-sm" style="padding:28px;">
+        <div style="width:52px;height:52px;border-radius:50%;background:color-mix(in srgb,var(--ib-coral) 16%,transparent);display:grid;place-items:center;margin-bottom:6px;"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#e07a4b" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path></svg></div>
+        <span class="card-title" style="font-size:20px;">Retención de clientes</span>
+        <p class="card-body" style="opacity:1;font-size:15px;">Identificamos a los clientes que están a punto de dejar la clínica y te damos la acción para recuperarlos antes.</p>
+        <a class="btn btn-ghost" href="mailto:soporte@incaptoblue.com?subject=Retenci%C3%B3n%20de%20clientes" style="text-decoration:none;align-self:flex-start;padding-left:0;">Quiero fidelizar →</a>
+      </div>
+      <div class="card elev-sm" style="padding:28px;">
+        <div style="width:52px;height:52px;border-radius:50%;background:var(--color-accent-2-100);display:grid;place-items:center;margin-bottom:6px;"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#7a8a5e" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"></path><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg></div>
+        <span class="card-title" style="font-size:20px;">Ingresos recurrentes</span>
+        <p class="card-body" style="opacity:1;font-size:15px;">Diseñamos planes de salud y suscripciones a partir de tus datos, para estabilizar los ingresos mes a mes.</p>
+        <a class="btn btn-ghost" href="mailto:soporte@incaptoblue.com?subject=Ingresos%20recurrentes" style="text-decoration:none;align-self:flex-start;padding-left:0;">Estabilizar ingresos →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ CÓMO TRABAJAMOS ══ -->
+  <section id="como" style="max-width:1180px;margin:0 auto;padding:80px 40px 0;scroll-margin-top:80px;">
+    <span class="tag tag-accent-2">Cómo trabajamos</span>
+    <h2 style="font-size:40px;margin:16px 0 36px;">Cuatro pasos, cero complicaciones</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px;">
+      <div style="border-radius:var(--radius-lg);border:1px solid var(--color-divider);padding:26px;"><div style="width:44px;height:44px;border-radius:50%;background:var(--ib-blue);color:#fff;font-family:var(--font-heading);display:grid;place-items:center;font-size:20px;">1</div><h4 style="margin:16px 0 6px;">Nos envías tus datos</h4><p style="font-size:14px;margin:0;color:color-mix(in srgb,var(--color-text) 70%,transparent);">Una exportación de tu software de gestión. Nada más.</p></div>
+      <div style="border-radius:var(--radius-lg);border:1px solid var(--color-divider);padding:26px;"><div style="width:44px;height:44px;border-radius:50%;background:var(--ib-blue);color:#fff;font-family:var(--font-heading);display:grid;place-items:center;font-size:20px;">2</div><h4 style="margin:16px 0 6px;">Analizamos y auditamos</h4><p style="font-size:14px;margin:0;color:color-mix(in srgb,var(--color-text) 70%,transparent);">Cruzamos facturación, clientes y servicios para ver el cuadro completo.</p></div>
+      <div style="border-radius:var(--radius-lg);border:1px solid var(--color-divider);padding:26px;"><div style="width:44px;height:44px;border-radius:50%;background:var(--ib-blue);color:#fff;font-family:var(--font-heading);display:grid;place-items:center;font-size:20px;">3</div><h4 style="margin:16px 0 6px;">Informe con acciones</h4><p style="font-size:14px;margin:0;color:color-mix(in srgb,var(--color-text) 70%,transparent);">Te lo explicamos claro: qué pasa, cuánto vale y qué hacer esta semana.</p></div>
+      <div style="border-radius:var(--radius-lg);border:1px solid var(--color-divider);padding:26px;"><div style="width:44px;height:44px;border-radius:50%;background:var(--ib-coral);color:#fff;font-family:var(--font-heading);display:grid;place-items:center;font-size:20px;">4</div><h4 style="margin:16px 0 6px;">Seguimos contigo</h4><p style="font-size:14px;margin:0;color:color-mix(in srgb,var(--color-text) 70%,transparent);">Cada mes medimos el progreso y ajustamos el rumbo.</p></div>
+    </div>
+  </section>
+
+  <!-- ══ RESULTADOS ══ -->
+  <section id="resultados" style="max-width:1180px;margin:0 auto;padding:80px 40px 0;scroll-margin-top:80px;">
+    <div style="display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:center;">
+      <div>
+        <span class="tag tag-accent-2">Resultados</span>
+        <h2 style="font-size:40px;margin:16px 0 12px;">Menos fugas, más clientes que vuelven.</h2>
+        <p style="font-size:17px;color:color-mix(in srgb,var(--color-text) 75%,transparent);">Detectamos la caída de revisiones a tiempo y la revertimos. La línea de puntos es lo que habría pasado sin actuar.</p>
+        <div style="display:flex;gap:14px;margin-top:24px;">
+          <a class="btn btn-primary" href="mailto:soporte@incaptoblue.com?subject=Quiero%20ver%20mis%20datos" style="text-decoration:none;padding:12px 24px;">Ver qué esconden mis datos</a>
+        </div>
+      </div>
+      <div class="card elev-md" style="padding:30px;">
+        <span class="card-kicker" style="color:var(--ib-blue);">Retención de clientes</span>
+        <svg viewBox="0 0 340 196" style="width:100%;height:auto;margin-top:8px;">
+          <g stroke="#dcd3c4" stroke-width="1"><line x1="40" y1="30" x2="330" y2="30"/><line x1="40" y1="70" x2="330" y2="70"/><line x1="40" y1="110" x2="330" y2="110"/></g>
+          <g stroke="#a19786" stroke-width="1.5" stroke-linecap="round"><line x1="40" y1="16" x2="40" y2="150"/><line x1="40" y1="150" x2="330" y2="150"/></g>
+          <polyline points="52,126 105,104 158,110 211,78 264,58 318,32" fill="none" stroke="#3f7cf0" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></polyline>
+          <polyline points="52,132 105,134 158,138 211,140 264,144 318,148" fill="none" stroke="#7a8a5e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="2 8"></polyline>
+          <circle cx="318" cy="32" r="7" fill="#e07a4b"></circle>
+          <circle cx="211" cy="78" r="5" fill="#3f7cf0"></circle>
+          <g font-family="Figtree,sans-serif" font-size="10" fill="#645c50" text-anchor="middle"><text x="52" y="172">Ene</text><text x="105" y="172">Feb</text><text x="158" y="172">Mar</text><text x="211" y="172">Abr</text><text x="264" y="172">May</text><text x="318" y="172">Jun</text></g>
+        </svg>
+        <div style="display:flex;gap:20px;font-size:13px;margin-top:6px;">
+          <span style="display:flex;align-items:center;gap:6px;"><span style="width:14px;height:4px;border-radius:2px;background:#3f7cf0;"></span>Con Incapto Blue</span>
+          <span style="display:flex;align-items:center;gap:6px;"><span style="width:14px;height:4px;border-radius:2px;background:#7a8a5e;"></span>Sin actuar</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ CTA FINAL ══ -->
+  <section style="max-width:1180px;margin:88px auto 0;padding:0 40px;">
+    <div style="position:relative;overflow:hidden;border-radius:var(--radius-lg);background:var(--ib-blue-deep);color:#fff;padding:60px 56px;text-align:center;">
+      <div style="position:absolute;left:-60px;top:-60px;width:200px;height:200px;border-radius:50%;background:#1b47a3;"></div>
+      <div style="position:absolute;right:-40px;bottom:-70px;width:180px;height:180px;border-radius:50%;background:#1b47a3;"></div>
+      <div style="position:relative;">
+        <h2 style="font-size:44px;margin:0;color:#fff;">La primera auditoría es gratis.</h2>
+        <p style="font-size:19px;max-width:560px;margin:16px auto 0;opacity:.9;">Cuéntanos cómo va tu clínica y te devolvemos un diagnóstico con acciones concretas. Sin compromiso.</p>
+        <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:32px;">
+          <a class="btn btn-primary" href="mailto:soporte@incaptoblue.com?subject=Quiero%20mi%20auditor%C3%ADa%20gratuita" style="text-decoration:none;font-size:17px;padding:15px 30px;">Pide tu auditoría gratuita</a>
+          <a class="btn" href="mailto:soporte@incaptoblue.com?subject=Consulta%20general" style="text-decoration:none;font-size:17px;padding:15px 30px;color:#fff;border:1px solid rgba(255,255,255,.4);">soporte@incaptoblue.com</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ FOOTER ══ -->
+  <footer style="max-width:1180px;margin:88px auto 0;padding:28px 40px 56px;border-top:1px solid var(--color-divider);display:flex;flex-direction:column;gap:22px;">
+    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;">
+      <div style="display:flex;align-items:center;gap:10px;">
+        <svg width="24" height="24" viewBox="0 0 48 48" aria-hidden="true"><rect x="5" y="29" width="9" height="13" rx="4.5" fill="#aecaff"></rect><rect x="19.5" y="20" width="9" height="22" rx="4.5" fill="#3f7cf0"></rect><rect x="34" y="9" width="9" height="33" rx="4.5" fill="#143371"></rect><circle cx="38.5" cy="4" r="4.5" fill="#e07a4b"></circle></svg>
+        <span style="font-family:var(--font-heading);font-size:16px;">incapto<span style="color:var(--ib-blue);">blue</span></span>
+      </div>
+      <div style="display:flex;gap:18px;flex-wrap:wrap;font-size:13px;">
+        <a href="mailto:soporte@incaptoblue.com" style="text-decoration:none;color:inherit;">soporte@incaptoblue.com</a>
+        <a href="privacidad.html" style="text-decoration:none;color:inherit;">Privacidad</a>
+        <a href="aviso-legal.html" style="text-decoration:none;color:inherit;">Aviso legal</a>
+      </div>
+      <div style="font-size:13px;color:color-mix(in srgb,var(--color-text) 60%,transparent);">Incapto Blue SLU · <a href="mailto:soporte@incaptoblue.com" style="text-decoration:none;">soporte@incaptoblue.com</a></div>
+    </div>
+  </footer>
+</div>
+
+
+</body>
+</html>
