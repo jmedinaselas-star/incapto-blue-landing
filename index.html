@@ -5,15 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Incapto Blue | Análisis de datos para clínicas veterinarias</title>
 <meta name="description" content="Auditoría de facturación y análisis de datos para recuperar ingresos y fidelizar clientes en clínicas veterinarias.">
+<meta name="theme-color" content="#143371">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 
 </head>
 <body>
 
 
 
-<link rel="stylesheet" href="styles.css">
-
-<link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=20260722-2">
 <style>
   :root{
     --color-accent:#3f7cf0;
@@ -32,7 +32,7 @@
 <div style="font-family:var(--font-body);color:var(--color-text);">
 
   <!-- ══ NAV ══ -->
-  <nav style="position:sticky;top:0;z-index:30;display:flex;align-items:center;gap:20px;padding:16px 40px;background:color-mix(in srgb,var(--color-bg) 90%,transparent);backdrop-filter:blur(10px);">
+  <nav style="position:sticky;top:0;z-index:30;display:flex;align-items:center;gap:20px;padding:16px 40px;background:var(--color-bg);border-bottom:1px solid var(--color-divider);">
     <a href="#top" style="display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--color-text);margin-right:auto;">
       <svg width="28" height="28" viewBox="0 0 48 48" aria-hidden="true"><rect x="5" y="29" width="9" height="13" rx="4.5" fill="#aecaff"></rect><rect x="19.5" y="20" width="9" height="22" rx="4.5" fill="#3f7cf0"></rect><rect x="34" y="9" width="9" height="33" rx="4.5" fill="#143371"></rect><circle cx="38.5" cy="4" r="4.5" fill="#e07a4b"></circle></svg>
       <span style="font-family:var(--font-heading);font-size:19px;">incapto<span style="color:var(--ib-blue);">blue</span></span>
@@ -56,28 +56,69 @@
       <p style="font-size:13px;margin-top:16px;color:color-mix(in srgb,var(--color-text) 55%,transparent);">Trabajamos con exportaciones autorizadas · Sin historias clínicas · Sin acceso permanente</p>
     </div>
     <div style="position:relative;">
-      <div class="card elev-md" style="padding:26px;">
-        <span class="card-kicker" style="color:var(--ib-blue);">Demo con datos simulados</span>
-        <span class="card-title" style="font-size:19px;">Oportunidades que merecen atención</span>
-        
-        <svg viewBox="0 0 340 196" style="width:100%;height:auto;margin-top:6px;">
-          <g stroke="#dcd3c4" stroke-width="1"><line x1="40" y1="24" x2="326" y2="24"/><line x1="40" y1="66" x2="326" y2="66"/><line x1="40" y1="108" x2="326" y2="108"/></g>
-          <g stroke="#a19786" stroke-width="1.5" stroke-linecap="round"><line x1="40" y1="16" x2="40" y2="150"/><line x1="40" y1="150" x2="326" y2="150"/></g>
-          <g font-family="Figtree,sans-serif" font-size="9" fill="#82796a" text-anchor="end"><text x="33" y="153">0</text><text x="33" y="111">25</text><text x="33" y="69">50</text><text x="33" y="27">75</text></g>
-          <g fill="#3f7cf0"><rect x="49" y="108" width="26" height="42" rx="8"/><rect x="97" y="92" width="26" height="58" rx="8"/><rect x="145" y="100" width="26" height="50" rx="8"/><rect x="193" y="70" width="26" height="80" rx="8"/><rect x="241" y="54" width="26" height="96" rx="8"/></g>
-          <rect x="289" y="26" width="26" height="124" rx="8" fill="#e07a4b"/>
-          <g font-family="Figtree,sans-serif" font-size="10" fill="#645c50" text-anchor="middle"><text x="62" y="172">Ene</text><text x="110" y="172">Feb</text><text x="158" y="172">Mar</text><text x="206" y="172">Abr</text><text x="254" y="172">May</text><text x="302" y="172">Jun</text></g>
-        </svg><div style="display:flex;justify-content:space-between;font-size:12px;color:color-mix(in srgb,var(--color-text) 65%,transparent);border-top:1px solid var(--color-divider);padding-top:12px;">
-          <span><strong style="color:var(--ib-coral);">+18,4%</strong> oportunidad estimada</span>
-          <span><strong style="color:var(--ib-blue);">12</strong> clientes en riesgo</span>
+      <div class="hero-demo card elev-md" id="hero-demo" data-stage="1" role="group" aria-label="Demostración animada con datos simulados: un registro exportado del PMS se protege, se convierte en oportunidad, genera una tarea y termina en un resultado medido.">
+        <div class="hero-demo-head">
+          <div><span class="card-kicker">Demo con datos simulados</span><strong id="hero-demo-title">El dato entra desde tu PMS</strong></div>
+          <span class="hero-simulated">Ilustrativo</span>
+        </div>
+
+        <div class="hero-demo-stage">
+          <div class="hero-case-pill"><small>Caso seguido</small><strong id="hero-case-token">#2184</strong></div>
+
+          <div class="hero-scene is-active" data-hero-scene="1">
+            <div class="hero-file-card"><span class="hero-file-icon">CSV</span><div><strong>preventivo.csv</strong><small>3.721 registros autorizados</small></div><b>✓</b></div>
+            <div class="hero-raw-row"><span>#2184</span><span>Preventivo anual</span><strong>47 días vencido</strong></div>
+            <p>La clínica conserva el control de lo que exporta.</p>
+          </div>
+
+          <div class="hero-scene" data-hero-scene="2">
+            <div class="hero-privacy-card"><span>Paciente #2184</span><i>→</i><strong>P-0248</strong></div>
+            <div class="hero-privacy-card is-removed"><span>Nombre y contacto</span><i>→</i><strong>Eliminados</strong></div>
+            <div class="hero-quality"><span>Dato utilizable</span><strong>Validado</strong><i><b></b></i></div>
+          </div>
+
+          <div class="hero-scene" data-hero-scene="3">
+            <div class="hero-cohort-copy"><small>Cohorte detectada</small><strong>184</strong><span>preventivos vencidos sin cita</span></div>
+            <div class="hero-patient-cloud" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="is-case"></i></div>
+            <p>P-0248 forma parte de una señal trazable.</p>
+          </div>
+
+          <div class="hero-scene" data-hero-scene="4">
+            <div class="hero-priority-card"><span class="hero-priority-dot"></span><div><small>Prioridad alta · evidencia alta</small><strong>Primera tanda de 38 contactos</strong><span>P-0248 incluido</span></div><b>01</b></div>
+            <div class="hero-estimate"><span>Oportunidad del grupo</span><strong>Estimación, no ingreso</strong></div>
+          </div>
+
+          <div class="hero-scene" data-hero-scene="5">
+            <div class="hero-task-card"><span class="hero-task-check">✓</span><div><small>Tarea asignada</small><strong>Llamar a P-0248</strong><p>Responsable: recepción · antes del viernes</p></div></div>
+            <div class="hero-task-meta"><span>Prioridad alta</span><span>Métrica: cita realizada</span></div>
+          </div>
+
+          <div class="hero-scene" data-hero-scene="6">
+            <div class="hero-result-orbit"><span>✓</span></div>
+            <div class="hero-result-copy"><small>Resultado del caso</small><strong>Cita completada</strong><span>P-0248 · resultado medido</span></div>
+            <div class="hero-result-group"><span>Seguimiento del grupo</span><strong>31 citas realizadas</strong><small>Dato simulado · no atribuimos automáticamente toda mejora al análisis</small></div>
+          </div>
+        </div>
+
+        <div class="hero-demo-footer">
+          <div class="hero-timeline" aria-label="Seleccionar una etapa de la demostración">
+            <button class="is-active" type="button" data-hero-target="1" aria-label="Ver etapa 1: Dato" title="Dato"></button>
+            <button type="button" data-hero-target="2" aria-label="Ver etapa 2: Protección" title="Protección"></button>
+            <button type="button" data-hero-target="3" aria-label="Ver etapa 3: Señal" title="Señal"></button>
+            <button type="button" data-hero-target="4" aria-label="Ver etapa 4: Prioridad" title="Prioridad"></button>
+            <button type="button" data-hero-target="5" aria-label="Ver etapa 5: Tarea" title="Tarea"></button>
+            <button type="button" data-hero-target="6" aria-label="Ver etapa 6: Resultado" title="Resultado"></button>
+            <span id="hero-timeline-progress"></span>
+          </div>
+          <span id="hero-stage-name">Dato</span>
+          <button id="hero-replay" type="button" aria-label="Reproducir de nuevo la demostración">↻ Ver de nuevo</button>
         </div>
       </div>
-      <div class="hero-card-accent" aria-hidden="true"></div>
     </div>
   </header>
 
   <!-- ══ PRINCIPIOS DEL SERVICIO ══ -->
-  <section style="background:var(--ib-blue-deep);color:#fff;margin-top:40px;">
+  <section class="principles-section" style="background:var(--ib-blue-deep);color:#fff;margin-top:40px;">
     <div style="max-width:1180px;margin:0 auto;padding:56px 40px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:32px;text-align:center;">
       <div><div style="font-family:var(--font-heading);font-size:44px;">5</div><p style="opacity:.85;font-size:15px;margin:6px 0 0;">acciones prioritarias como máximo, para que el equipo pueda ejecutarlas.</p></div>
       <div><div style="font-family:var(--font-heading);font-size:44px;color:#7aa5f7;">90 días</div><p style="opacity:.85;font-size:15px;margin:6px 0 0;">de plan operativo con responsables, plazos y una línea base medible.</p></div>
@@ -89,8 +130,8 @@
   <section id="como" class="process-demo" aria-labelledby="process-title">
     <div class="process-intro">
       <span class="tag tag-accent-2">Así convertimos tus datos en decisiones</span>
-      <h2 id="process-title">De una exportación del PMS a un plan de 90 días.</h2>
-      <p>No necesitas cambiar de software. Validamos lo que ya registras, protegemos la información y separamos las oportunidades estimadas de los resultados realmente obtenidos.</p>
+      <h2 id="process-title">Sigue un dato desde el PMS hasta una acción medible.</h2>
+      <p>Acompañamos el mismo caso durante seis fases: lo extraemos, protegemos, interpretamos y convertimos en una tarea cuyo resultado puede comprobarse.</p>
       <div class="demo-disclaimer"><strong>Demostración ilustrativa.</strong> Los nombres, registros, importes y resultados de esta sección son ficticios y no representan a ninguna clínica real.</div>
     </div>
 
@@ -126,29 +167,31 @@
         <div class="demo-window elev-md">
           <div class="demo-toolbar">
             <span class="demo-dots" aria-hidden="true"><i></i><i></i><i></i></span>
-            <span id="demo-stage-label">01 · Exportación</span>
+            <span class="demo-stage-copy"><span id="demo-stage-label">01 · Exportación</span><small id="demo-case-label">Registro #2184</small></span>
             <span class="demo-badge">Datos simulados</span>
           </div>
 
           <div class="demo-screen is-active" data-screen="1">
             <div class="screen-heading"><div><span class="eyebrow">Origen de datos</span><h3>Exportaciones autorizadas</h3></div><span class="status-chip">5 archivos listos</span></div>
+            <div class="case-thread" data-case-stage="1"><span class="case-token">#2184</span><div><small>Hilo del caso · Preventivo anual</small><strong>Registro vencido hace 47 días</strong></div><span class="case-state">Dato bruto</span></div>
             <div class="file-list">
               <div><span class="file-icon">CSV</span><p><strong>clientes.csv</strong><small>4.286 registros</small></p><b>✓</b></div>
               <div><span class="file-icon">CSV</span><p><strong>pacientes.csv</strong><small>5.914 registros</small></p><b>✓</b></div>
               <div><span class="file-icon">CSV</span><p><strong>agenda.csv</strong><small>12.480 registros</small></p><b>✓</b></div>
               <div><span class="file-icon">CSV</span><p><strong>ventas.csv</strong><small>18.302 registros</small></p><b>✓</b></div>
-              <div><span class="file-icon">CSV</span><p><strong>preventivo.csv</strong><small>3.721 registros</small></p><b>✓</b></div>
+              <div class="journey-focus"><span class="file-icon">CSV</span><p><strong>preventivo.csv</strong><small>3.721 registros · contiene #2184</small></p><b>✓</b></div>
             </div>
             <div class="screen-note">La clínica decide qué exporta y conserva el control de sus datos.</div>
           </div>
 
           <div class="demo-screen" data-screen="2">
             <div class="screen-heading"><div><span class="eyebrow">Seguridad y calidad</span><h3>Solo conservamos lo necesario</h3></div><span class="status-chip status-secure">Protegido</span></div>
+            <div class="case-thread" data-case-stage="2"><span class="case-token">P-0248</span><div><small>El registro continúa, la identidad no</small><strong>Identificadores retirados y dato validado</strong></div><span class="case-state">Protegido</span></div>
             <div class="privacy-grid">
               <div class="privacy-row"><span>María López</span><em>→</em><strong>CLI_8F3A21</strong></div>
               <div class="privacy-row"><span>maria@email.es</span><em>→</em><strong class="removed">Eliminado</strong></div>
-              <div class="privacy-row"><span>612 345 678</span><em>→</em><strong class="removed">Eliminado</strong></div>
-              <div class="privacy-row"><span>Toby · Perro</span><em>→</em><strong>PAC_19C4 · Perro</strong></div>
+              <div class="privacy-row"><span>512 345 678</span><em>→</em><strong class="removed">Eliminado</strong></div>
+              <div class="privacy-row journey-focus"><span>Paciente #2184</span><em>→</em><strong>P-0248 · Perro</strong></div>
             </div>
             <div class="quality-card">
               <div><span>Registros utilizables</span><strong>94%</strong></div>
@@ -159,11 +202,12 @@
 
           <div class="demo-screen" data-screen="3">
             <div class="screen-heading"><div><span class="eyebrow">Línea base</span><h3>La clínica en cinco indicadores</h3></div><span class="status-chip">Últimos 12 meses</span></div>
+            <div class="case-thread" data-case-stage="3"><span class="case-token">P-0248</span><div><small>Del registro individual a una señal</small><strong>Forma parte de 184 preventivos vencidos sin cita</strong></div><span class="case-state">Cohorte</span></div>
             <div class="kpi-grid">
               <div class="kpi-card kpi-wide"><span>Facturación mensual</span><strong>47.280 €</strong><small class="positive">↑ 4,2% frente al periodo anterior</small></div>
               <div class="kpi-card"><span>Clientes que repiten</span><strong>62%</strong><small>Fiabilidad alta</small></div>
               <div class="kpi-card"><span>Citas no presentadas</span><strong>8,4%</strong><small class="warning">↑ 1,7 puntos</small></div>
-              <div class="kpi-card"><span>Preventivos al día</span><strong>71%</strong><small>3.721 registros</small></div>
+              <div class="kpi-card journey-focus"><span>Preventivos al día</span><strong>71%</strong><small>184 vencidos sin cita · incluye P-0248</small></div>
               <div class="kpi-card"><span>Pendiente de cobro</span><strong>3.840 €</strong><small>Saldo registrado</small></div>
             </div>
             <div class="mini-trend" aria-hidden="true"><span>Retención mensual</span><svg viewBox="0 0 380 70"><path d="M4 55 C55 48 80 60 125 38 S210 48 250 25 S330 28 376 8" fill="none" stroke="#3f7cf0" stroke-width="4" stroke-linecap="round"/><path d="M4 65H376" stroke="#ddd7cc"/><circle cx="376" cy="8" r="5" fill="#e07a4b"/></svg></div>
@@ -171,8 +215,9 @@
 
           <div class="demo-screen" data-screen="4">
             <div class="screen-heading"><div><span class="eyebrow">Radar de oportunidades</span><h3>Qué merece atención primero</h3></div><span class="status-chip">4 señales</span></div>
+            <div class="case-thread" data-case-stage="4"><span class="case-token">P-0248</span><div><small>La señal se convierte en prioridad</small><strong>Entra en el primer grupo de 38 contactos</strong></div><span class="case-state">Prioridad alta</span></div>
             <div class="opportunity-list">
-              <div class="opportunity high"><span class="priority-dot"></span><div><strong>Preventivos vencidos sin cita</strong><small>184 pacientes · Evidencia alta</small></div><p><b>4.600 €</b><small>oportunidad estimada</small></p><span class="effort">Esfuerzo bajo</span></div>
+              <div class="opportunity high journey-focus"><span class="priority-dot"></span><div><strong>Preventivos vencidos sin cita</strong><small>184 pacientes · P-0248 en la primera tanda</small></div><p><b>4.600 €</b><small>oportunidad estimada</small></p><span class="effort">Esfuerzo bajo</span></div>
               <div class="opportunity high"><span class="priority-dot"></span><div><strong>Huecos recuperables de agenda</strong><small>Lunes y miércoles · Evidencia alta</small></div><p><b>31 h</b><small>al mes</small></p><span class="effort medium">Esfuerzo medio</span></div>
               <div class="opportunity"><span class="priority-dot"></span><div><strong>Clientes inactivos recuperables</strong><small>Sin visita en 18 meses</small></div><p><b>126</b><small>clientes</small></p><span class="effort medium">Esfuerzo medio</span></div>
               <div class="opportunity"><span class="priority-dot"></span><div><strong>Descuentos sin motivo registrado</strong><small>Revisar criterios y autorización</small></div><p><b>1.280 €</b><small>importe observado</small></p><span class="effort">Esfuerzo bajo</span></div>
@@ -182,8 +227,9 @@
 
           <div class="demo-screen" data-screen="5">
             <div class="screen-heading"><div><span class="eyebrow">Plan de 90 días</span><h3>De la señal a la ejecución</h3></div><span class="status-chip">3 acciones</span></div>
+            <div class="case-thread" data-case-stage="5"><span class="case-token">P-0248</span><div><small>La oportunidad ya tiene dueño y plazo</small><strong>Llamar antes del viernes · Responsable: recepción</strong></div><span class="case-state">Tarea asignada</span></div>
             <div class="action-list">
-              <div class="action-card"><span class="action-index">1</span><div><strong>Recuperar preventivos vencidos</strong><p>Segmentar y contactar 184 pacientes durante 14 días.</p><div class="action-meta"><span>Recepción</span><span>14 días</span><span>Citas e ingreso cobrado</span></div></div></div>
+              <div class="action-card journey-focus"><span class="action-index">1</span><div><strong>Recuperar preventivos vencidos</strong><p>Empezar por 38 casos priorizados, incluido P-0248.</p><div class="action-meta"><span>Recepción</span><span>Antes del viernes</span><span>Cita realizada</span></div></div></div>
               <div class="action-card"><span class="action-index">2</span><div><strong>Reducir ausencias de los lunes</strong><p>Confirmación 48 h antes y activación de lista de espera.</p><div class="action-meta"><span>Coordinación</span><span>30 días</span><span>Horas recuperadas</span></div></div></div>
               <div class="action-card"><span class="action-index">3</span><div><strong>Corregir servicios sin clasificar</strong><p>Definir códigos y protocolo de registro en recepción.</p><div class="action-meta"><span>Administración</span><span>21 días</span><span>&gt;98% válidos</span></div></div></div>
             </div>
@@ -191,6 +237,7 @@
 
           <div class="demo-screen" data-screen="6">
             <div class="screen-heading"><div><span class="eyebrow">Seguimiento</span><h3>Lo que realmente ocurrió</h3></div><span class="status-chip status-secure">Día 30</span></div>
+            <div class="case-thread is-complete" data-case-stage="6"><span class="case-token">P-0248</span><div><small>El hilo termina en un hecho comprobable</small><strong>Contacto realizado → cita completada</strong></div><span class="case-state">Medido</span></div>
             <div class="funnel">
               <div><span>Pacientes identificados</span><strong>184</strong><i style="width:100%"></i></div>
               <div><span>Pacientes contactados</span><strong>161</strong><i style="width:87%"></i></div>
@@ -218,19 +265,19 @@
     <p style="font-size:18px;max-width:680px;color:color-mix(in srgb,var(--color-text) 72%,transparent);">El alcance se acuerda con la dirección de la clínica. No prometemos resultados antes de validar la calidad y el significado de los registros.</p>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin-top:36px;">
       <div class="card elev-sm" style="padding:28px;">
-        <div style="width:52px;height:52px;border-radius:50%;background:var(--color-accent-100);display:grid;place-items:center;margin-bottom:6px;"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#3f7cf0" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"></path><path d="m19 9-5 5-4-4-3 3"></path></svg></div>
+        <div class="service-mark service-mark-revenue" aria-hidden="true"><i></i><i></i><i></i><b></b></div>
         <span class="card-title" style="font-size:20px;">Actividad y cobro</span>
         <p class="card-body" style="opacity:1;font-size:15px;">Contrastamos actividad, facturación, descuentos y cobros para localizar diferencias y formular hipótesis verificables.</p>
         <a class="btn btn-ghost" href="#contacto" style="text-decoration:none;align-self:flex-start;padding-left:0;">Explorar esta área →</a>
       </div>
       <div class="card elev-sm" style="padding:28px;">
-        <div style="width:52px;height:52px;border-radius:50%;background:color-mix(in srgb,var(--ib-coral) 16%,transparent);display:grid;place-items:center;margin-bottom:6px;"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#e07a4b" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path></svg></div>
+        <div class="service-mark service-mark-cohort" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
         <span class="card-title" style="font-size:20px;">Recurrencia y preventivo</span>
         <p class="card-body" style="opacity:1;font-size:15px;">Segmentamos pacientes sin próxima cita, preventivos vencidos y clientes inactivos según criterios acordados con la clínica.</p>
         <a class="btn btn-ghost" href="#contacto" style="text-decoration:none;align-self:flex-start;padding-left:0;">Explorar esta área →</a>
       </div>
       <div class="card elev-sm" style="padding:28px;">
-        <div style="width:52px;height:52px;border-radius:50%;background:var(--color-accent-2-100);display:grid;place-items:center;margin-bottom:6px;"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#7a8a5e" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"></path><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg></div>
+        <div class="service-mark service-mark-agenda" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
         <span class="card-title" style="font-size:20px;">Agenda y capacidad</span>
         <p class="card-body" style="opacity:1;font-size:15px;">Analizamos cancelaciones, inasistencias, franjas y ocupación para proponer pruebas operativas que el equipo pueda medir.</p>
         <a class="btn btn-ghost" href="#contacto" style="text-decoration:none;align-self:flex-start;padding-left:0;">Explorar esta área →</a>
@@ -292,13 +339,15 @@
       </div>
     </div>
     <form id="contact-form" class="contact-form" aria-label="Solicitud de muestra de diagnóstico">
+      <label class="form-trap" aria-hidden="true">No rellenar<input name="website" tabindex="-1" autocomplete="off"></label>
       <div class="form-row"><label>Nombre y apellidos<input name="nombre" autocomplete="name" required></label><label>Clínica<input name="clinica" autocomplete="organization" required></label></div>
       <label>Correo profesional<input name="email" type="email" autocomplete="email" required></label>
       <div class="form-row"><label>Programa de gestión<select name="pms" required><option value="">Selecciona una opción</option><option>WinVet</option><option>Provet Cloud</option><option>QVet</option><option>Wakyma Vets</option><option>Otro</option></select></label><label>¿Utilizas su módulo de analítica?<select name="analitica" required><option value="">Selecciona</option><option>Sí</option><option>No</option><option>No estoy seguro/a</option></select></label></div>
       <label>¿Qué decisión de gestión te cuesta responder hoy?<textarea name="necesidad" rows="3" placeholder="Por ejemplo: pacientes que no regresan, huecos de agenda, preventivo o cobros."></textarea></label>
       <label class="consent"><input name="privacidad" type="checkbox" required><span>He leído y acepto la <a href="privacidad.html">política de privacidad</a> para que Incapto Blue responda a esta solicitud.</span></label>
-      <button class="btn btn-primary" type="submit">Preparar mi solicitud</button>
-      <p class="form-help">Al enviar, se abrirá tu aplicación de correo con la solicitud preparada. No se enviarán datos automáticamente.</p>
+      <button class="btn btn-primary" type="submit">Enviar solicitud</button>
+      <p class="form-help">La solicitud se enviará directamente a soporte@incaptoblue.com.</p>
+      <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
     </form>
   </section>
 
@@ -321,25 +370,136 @@
 
 <script>
   (() => {
+    const demo = document.getElementById('hero-demo');
+    if (!demo) return;
+    const scenes = [...demo.querySelectorAll('.hero-scene')];
+    const dots = [...demo.querySelectorAll('.hero-timeline > button')];
+    const title = document.getElementById('hero-demo-title');
+    const token = document.getElementById('hero-case-token');
+    const stageName = document.getElementById('hero-stage-name');
+    const progress = document.getElementById('hero-timeline-progress');
+    const replay = document.getElementById('hero-replay');
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const titles = ['El dato entra desde tu PMS', 'Retiramos lo que no necesitamos', 'El registro se convierte en señal', 'La señal gana prioridad', 'La prioridad se convierte en tarea', 'La tarea termina en un resultado'];
+    const tokens = ['#2184', 'P-0248', 'P-0248', 'P-0248', 'P-0248', 'P-0248'];
+    const stageNames = ['Dato', 'Protección', 'Señal', 'Prioridad', 'Tarea', 'Resultado'];
+    let currentStage = 1;
+    let timer = null;
+    let started = false;
+    let manuallyPaused = false;
+
+    function renderStage(stage) {
+      currentStage = stage;
+      demo.dataset.stage = String(stage);
+      demo.classList.toggle('is-complete', stage === scenes.length);
+      scenes.forEach(scene => scene.classList.toggle('is-active', scene.dataset.heroScene === String(stage)));
+      dots.forEach((dot, index) => {
+        dot.classList.toggle('is-active', index === stage - 1);
+        dot.classList.toggle('is-done', index < stage - 1);
+      });
+      title.textContent = titles[stage - 1];
+      token.textContent = tokens[stage - 1];
+      stageName.textContent = stageNames[stage - 1];
+      progress.style.width = `${(stage - 1) / (scenes.length - 1) * 100}%`;
+    }
+
+    function scheduleNext() {
+      window.clearTimeout(timer);
+      if (document.hidden || manuallyPaused || currentStage >= scenes.length) return;
+      timer = window.setTimeout(() => {
+        renderStage(currentStage + 1);
+        scheduleNext();
+      }, 3000);
+    }
+
+    function play() {
+      started = true;
+      manuallyPaused = false;
+      demo.classList.remove('is-paused');
+      replay.textContent = '↻ Ver de nuevo';
+      replay.setAttribute('aria-label', 'Reproducir de nuevo la demostración');
+      renderStage(1);
+      scheduleNext();
+    }
+
+    function selectStage(stage) {
+      started = true;
+      manuallyPaused = true;
+      window.clearTimeout(timer);
+      demo.classList.add('is-paused');
+      renderStage(stage);
+      replay.textContent = stage < scenes.length ? '▶ Continuar' : '↻ Ver de nuevo';
+      replay.setAttribute('aria-label', stage < scenes.length ? 'Continuar la demostración desde esta etapa' : 'Reproducir de nuevo la demostración');
+    }
+
+    dots.forEach(dot => dot.addEventListener('click', () => selectStage(Number(dot.dataset.heroTarget))));
+    replay.addEventListener('click', () => {
+      if (manuallyPaused && currentStage < scenes.length) {
+        manuallyPaused = false;
+        demo.classList.remove('is-paused');
+        replay.textContent = '↻ Ver de nuevo';
+        replay.setAttribute('aria-label', 'Reproducir de nuevo la demostración');
+        scheduleNext();
+      } else {
+        play();
+      }
+    });
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) window.clearTimeout(timer);
+      else if (started && currentStage < scenes.length) scheduleNext();
+    });
+
+    if (reducedMotion) {
+      started = true;
+      renderStage(scenes.length);
+    } else if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver(entries => {
+        if (!started && entries.some(entry => entry.isIntersecting)) {
+          play();
+          observer.disconnect();
+        }
+      }, { threshold: .35 });
+      observer.observe(demo);
+    } else {
+      play();
+    }
+  })();
+
+  (() => {
     const form = document.getElementById('contact-form');
-    form.addEventListener('submit', event => {
+    const button = form.querySelector('button[type="submit"]');
+    const status = document.getElementById('form-status');
+    form.addEventListener('submit', async event => {
       event.preventDefault();
       if (!form.reportValidity()) return;
       const data = new FormData(form);
-      const subject = `Solicitud de muestra · ${data.get('clinica')}`;
-      const body = [
-        `Nombre: ${data.get('nombre')}`,
-        `Clínica: ${data.get('clinica')}`,
-        `Correo: ${data.get('email')}`,
-        `PMS: ${data.get('pms')}`,
-        `Módulo de analítica: ${data.get('analitica')}`,
-        '',
-        'Necesidad principal:',
-        data.get('necesidad') || 'No indicada',
-        '',
-        'Solicito información sobre una muestra de diagnóstico y acepto la política de privacidad.'
-      ].join('\n');
-      window.location.href = `mailto:soporte@incaptoblue.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      const payload = Object.fromEntries(data.entries());
+      payload.privacidad = data.get('privacidad') === 'on';
+      button.disabled = true;
+      button.textContent = 'Enviando…';
+      form.setAttribute('aria-busy', 'true');
+      status.className = 'form-status';
+      status.textContent = '';
+
+      try {
+        const response = await fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        const result = await response.json().catch(() => ({}));
+        if (!response.ok) throw new Error(result.error || 'No se ha podido enviar la solicitud.');
+        form.reset();
+        status.classList.add('is-success');
+        status.textContent = 'Solicitud enviada. Te responderemos en el correo indicado.';
+      } catch (error) {
+        status.classList.add('is-error');
+        status.textContent = `${error.message} También puedes escribir a soporte@incaptoblue.com.`;
+      } finally {
+        button.disabled = false;
+        button.textContent = 'Enviar solicitud';
+        form.removeAttribute('aria-busy');
+      }
     });
   })();
 
@@ -347,8 +507,10 @@
     const steps = [...document.querySelectorAll('.process-step')];
     const screens = [...document.querySelectorAll('.demo-screen')];
     const label = document.getElementById('demo-stage-label');
+    const caseLabel = document.getElementById('demo-case-label');
     const progress = document.getElementById('demo-progress-bar');
     const labels = ['Exportación', 'Protección y calidad', 'Línea base', 'Oportunidades', 'Plan de acción', 'Seguimiento'];
+    const caseLabels = ['Registro #2184', 'Caso P-0248', 'Caso P-0248', 'Caso P-0248', 'Caso P-0248', 'Caso P-0248 · medido'];
 
     let currentStage = 1;
     let framePending = false;
@@ -363,6 +525,7 @@
         if (active) screen.classList.add(direction === 'backward' ? 'stage-backward' : 'stage-forward');
       });
       label.textContent = `${String(stage).padStart(2, '0')} · ${labels[stage - 1]}`;
+      caseLabel.textContent = caseLabels[stage - 1];
       progress.style.width = `${stage / steps.length * 100}%`;
       currentStage = stage;
     }
