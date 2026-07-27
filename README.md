@@ -5,9 +5,13 @@ Landing con frontend estático y una función de contacto para Vercel.
 ## Páginas
 
 - `index.html`: landing principal
+- `veterinaria/index.html`: variante para clínicas veterinarias
+- `gimnasios/index.html`: variante para gimnasios y centros deportivos
 - `privacidad.html`: política de privacidad
 - `aviso-legal.html`: aviso legal
 - `api/contact.js`: envío seguro del formulario mediante Resend
+- `sector.css`: estilos compartidos por las variantes sectoriales
+- `sector-contact.js`: envío del formulario compartido por ambas variantes
 
 ## Formulario de contacto en Vercel
 

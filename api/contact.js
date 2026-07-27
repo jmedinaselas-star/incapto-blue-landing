@@ -1,4 +1,5 @@
 const FIELD_LIMITS = {
+  sector: 40,
   nombre: 120,
   clinica: 120,
   email: 160,
@@ -65,12 +66,14 @@ module.exports = async function contact(req, res) {
   }
 
   const safe = Object.fromEntries(Object.entries(fields).map(([key, value]) => [key, escapeHtml(value)]));
-  const subject = `Solicitud de muestra · ${fields.clinica}`;
+  const sector = fields.sector || 'Veterinaria';
+  const subject = `Solicitud ${sector} · ${fields.clinica}`;
   const text = [
+    `Sector: ${sector}`,
     `Nombre: ${fields.nombre}`,
     `Clínica: ${fields.clinica}`,
     `Correo: ${fields.email}`,
-    `PMS: ${fields.pms}`,
+    `Software de gestión: ${fields.pms}`,
     `Módulo de analítica: ${fields.analitica}`,
     '',
     'Necesidad principal:',
@@ -80,10 +83,11 @@ module.exports = async function contact(req, res) {
   ].join('\n');
   const html = `
     <h2>Nueva solicitud de muestra</h2>
+    <p><strong>Sector:</strong> ${safe.sector || 'Veterinaria'}</p>
     <p><strong>Nombre:</strong> ${safe.nombre}</p>
     <p><strong>Clínica:</strong> ${safe.clinica}</p>
     <p><strong>Correo:</strong> ${safe.email}</p>
-    <p><strong>PMS:</strong> ${safe.pms}</p>
+    <p><strong>Software de gestión:</strong> ${safe.pms}</p>
     <p><strong>Módulo de analítica:</strong> ${safe.analitica}</p>
     <h3>Necesidad principal</h3>
     <p>${safe.necesidad || 'No indicada'}</p>
