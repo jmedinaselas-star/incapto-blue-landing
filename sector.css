@@ -17,6 +17,17 @@
 .sector-actions .btn { padding: 14px 24px; font-size: 15px; text-decoration: none; }
 .sector-proof { margin-top: 16px !important; color: color-mix(in srgb, var(--color-text) 58%, transparent) !important; font-size: 12px !important; }
 
+.sector-hero-photo { position: relative; min-height: 510px; margin: 0; overflow: hidden; border: 1px solid var(--color-divider); border-radius: 22px; background: #d7d0c4; box-shadow: 10px 10px 0 var(--color-accent-200); }
+.sector-hero-photo > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 58% center; }
+.hero-photo-insight { position: absolute; right: 18px; bottom: 18px; left: 18px; display: grid; gap: 5px; padding: 17px 18px; border: 1px solid rgba(20,51,113,.18); border-radius: 15px; background: rgba(255,252,246,.96); box-shadow: 0 12px 30px rgba(20,51,113,.14); }
+.hero-photo-insight > span { color: var(--color-accent-700); font-size: 9px; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
+.hero-photo-insight > strong { font-size: 17px; }
+.hero-photo-insight > div { display: flex; align-items: end; justify-content: space-between; gap: 16px; margin-top: 5px; padding-top: 11px; border-top: 1px solid var(--color-divider); }
+.hero-photo-insight small { color: #645c50; font-size: 10px; line-height: 1.35; }
+.hero-photo-insight b { color: var(--color-accent-800); font-size: 32px; font-variant-numeric: tabular-nums; line-height: 1; }
+.hero-photo-insight p { display: flex; justify-content: space-between; gap: 14px; margin: 6px 0 0; padding: 9px 10px; border-left: 3px solid var(--ib-coral); background: #fff5ef; color: #714932; font-size: 10px; font-weight: 800; }
+.hero-photo-insight p span { color: #8a6958; font-weight: 600; }
+
 .sector-snapshot { overflow: hidden; border: 1px solid var(--color-divider); border-radius: 18px; background: var(--color-surface); box-shadow: 10px 10px 0 var(--color-accent-200); }
 .snapshot-head { display: flex; justify-content: space-between; gap: 16px; padding: 18px 20px; background: var(--ib-blue-deep); color: #fff; }
 .snapshot-head div { display: grid; }
@@ -163,7 +174,7 @@
 @media (max-width: 940px) {
   .sector-hero { grid-template-columns: 1fr; }
   .sector-hero-copy { max-width: 760px; }
-  .sector-snapshot { max-width: 680px; }
+  .sector-snapshot, .sector-hero-photo { width: 100%; max-width: 680px; }
   .decision-panel { grid-template-columns: 1fr; }
   .case-study-header { grid-template-columns: 1fr; gap: 20px; }
   .case-study-story { grid-template-columns: 1fr; }
@@ -187,6 +198,9 @@
   .sector-hero h1 { font-size: 43px !important; }
   .sector-hero-copy > p { font-size: 17px; }
   .sector-snapshot { box-shadow: 7px 7px 0 var(--color-accent-200); }
+  .sector-hero-photo { min-height: 450px; box-shadow: 7px 7px 0 var(--color-accent-200); }
+  .hero-photo-insight { right: 13px; bottom: 13px; left: 13px; padding: 14px; }
+  .hero-photo-insight p { flex-direction: column; gap: 3px; }
   .sector-services, .sector-how, .sector-deliverables, .sector-trust, .sector-case-study { padding-top: 64px !important; }
   .sector-heading h2, .sector-trust h2 { font-size: 34px !important; }
   .pain-grid, .sector-process-grid, .sector-result-band > div, .sector-deliverables-grid, .sector-trust { grid-template-columns: 1fr; }
