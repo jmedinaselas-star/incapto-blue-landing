@@ -19,7 +19,12 @@
       if (!selectedStep) return;
       if (stage === currentStage && screens.some(screen => screen.classList.contains('is-active'))) return;
 
-      steps.forEach(step => step.classList.toggle('is-active', Number(step.dataset.stage) === stage));
+      steps.forEach(step => {
+        const on = Number(step.dataset.stage) === stage;
+        step.classList.toggle('is-active', on);
+        const trigger = step.querySelector('.step-trigger');
+        if (trigger) on ? trigger.setAttribute('aria-current', 'step') : trigger.removeAttribute('aria-current');
+      });
       screens.forEach(screen => {
         const active = Number(screen.dataset.screen) === stage;
         screen.classList.toggle('is-active', active);
@@ -65,8 +70,13 @@
     }
 
     steps.forEach(step => {
-      step.setAttribute('tabindex', '0');
-      step.setAttribute('role', 'button');
+      const heading = step.querySelector('h3');
+      const trigger = document.createElement('button');
+      trigger.type = 'button';
+      trigger.className = 'step-trigger';
+      trigger.textContent = heading.textContent;
+      heading.textContent = '';
+      heading.appendChild(trigger);
 
       const activate = () => {
         const nextStage = Number(step.dataset.stage);
@@ -75,12 +85,6 @@
       };
 
       step.addEventListener('click', activate);
-      step.addEventListener('keydown', event => {
-        if (event.key === 'Enter' || event.key === ' ') {
-          event.preventDefault();
-          activate();
-        }
-      });
     });
 
     window.addEventListener('scroll', requestStageUpdate, { passive: true });

@@ -12,7 +12,7 @@
 <meta property="og:description" content="Analizamos tus datos y construimos el software que los usa.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.incaptoblue.com/">
-<link rel="stylesheet" href="home.css?v=20261105-1">
+<link rel="stylesheet" href="home.css?v=20261105-2">
 </head>
 <body>
 <a class="skip" href="#main">Saltar al contenido</a>
@@ -73,11 +73,11 @@
         <div class="switch-out">
           <div class="view is-on" id="view-analyze" role="tabpanel" aria-labelledby="tab-analyze">
             <div class="finding">
-              <h3>Cobros con más de 90 días</h3>
+              <p class="finding-title">Cobros con más de 90 días</p>
               <strong>3.840 €</strong>
               <p>Tres clientes concentran todo lo vencido.</p>
             </div>
-            <div class="aging" aria-label="Importe pendiente por antigüedad">
+            <div class="aging" role="img" aria-label="Importe pendiente por antigüedad: la mayor parte corresponde a facturas con más de 90 días.">
               <div><span style="height:30%"></span><small>0–30 d</small></div>
               <div><span style="height:46%"></span><small>31–60 d</small></div>
               <div><span style="height:12%"></span><small>61–90 d</small></div>
@@ -203,25 +203,27 @@
         <p>Una pregunta que tus datos no te responden, una hoja de cálculo que se ha quedado pequeña o una aplicación que quieres lanzar. Te respondemos en dos días laborables con una propuesta de siguiente paso.</p>
         <p class="direct">También puedes escribirnos a <a href="mailto:soporte@incaptoblue.com">soporte@incaptoblue.com</a>.</p>
       </div>
-      <form id="contact-form" novalidate>
+      <form id="contact-form" novalidate aria-describedby="form-req">
+        <p id="form-req" class="form-hint">Los campos marcados con <span class="req" aria-hidden="true">*</span> son obligatorios.</p>
         <label class="trap" aria-hidden="true">No rellenar<input name="website" tabindex="-1" autocomplete="off"></label>
         <input type="hidden" name="sector" value="General">
         <div class="form-row">
-          <label>Nombre y apellidos<input name="nombre" autocomplete="name" required></label>
-          <label>Empresa<input name="empresa" autocomplete="organization" required></label>
+          <div class="field"><label><span>Nombre y apellidos <span class="req" aria-hidden="true">*</span></span><input id="f-nombre" name="nombre" autocomplete="name" required aria-describedby="e-nombre"></label><p id="e-nombre" class="field-error"></p></div>
+          <div class="field"><label><span>Empresa <span class="req" aria-hidden="true">*</span></span><input id="f-empresa" name="empresa" autocomplete="organization" required aria-describedby="e-empresa"></label><p id="e-empresa" class="field-error"></p></div>
         </div>
-        <label>Correo profesional<input name="email" type="email" autocomplete="email" required></label>
-        <fieldset>
-          <legend>¿En qué podemos ayudarte?</legend>
+        <div class="field"><label><span>Correo profesional <span class="req" aria-hidden="true">*</span></span><input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" required aria-describedby="e-email"></label><p id="e-email" class="field-error"></p></div>
+        <fieldset id="f-servicio" aria-describedby="e-servicio">
+          <legend>¿En qué podemos ayudarte? <span class="req" aria-hidden="true">*</span></legend>
           <div class="choices">
             <label><input type="radio" name="servicio" value="Análisis de datos" required><span>Análisis de datos</span></label>
             <label><input type="radio" name="servicio" value="Aplicación web"><span>Aplicación web</span></label>
             <label><input type="radio" name="servicio" value="Ambas cosas"><span>Ambas cosas</span></label>
             <label><input type="radio" name="servicio" value="Aún no lo sé"><span>Aún no lo sé</span></label>
           </div>
+          <p id="e-servicio" class="field-error"></p>
         </fieldset>
-        <label>Describe brevemente tu situación<textarea name="necesidad" rows="4" placeholder="Qué quieres saber o qué quieres construir, y qué programas usáis hoy."></textarea></label>
-        <label class="consent"><input name="privacidad" type="checkbox" required><span>He leído y acepto la <a href="privacidad.html">política de privacidad</a> para que Incapto Blue responda a esta solicitud.</span></label>
+        <label><span>Describe brevemente tu situación <span class="form-hint">(opcional)</span></span><textarea name="necesidad" rows="4" maxlength="2000" placeholder="Qué quieres saber o qué quieres construir, y qué programas usáis hoy."></textarea></label>
+        <div class="field"><label class="consent"><input id="f-privacidad" name="privacidad" type="checkbox" required aria-describedby="e-privacidad"><span>He leído y acepto la <a href="privacidad.html">política de privacidad</a> para que Incapto Blue responda a esta solicitud. <span class="req" aria-hidden="true">*</span></span></label><p id="e-privacidad" class="field-error"></p></div>
         <button class="btn btn-ink" type="submit">Enviar solicitud</button>
         <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
       </form>
@@ -243,6 +245,6 @@
   </div>
 </footer>
 
-<script src="home.js?v=20261105-1"></script>
+<script src="home.js?v=20261105-2"></script>
 </body>
 </html>
