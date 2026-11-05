@@ -4,12 +4,13 @@ Landing con frontend estático y una función de contacto para Vercel.
 
 ## Páginas
 
-- `index.html`: landing principal
+- `index.html`: portada corporativa (análisis de datos y desarrollo de aplicaciones web)
+- `home.css` y `home.js`: estilos, demo interactiva del hero y formulario de la portada
 - `veterinaria/index.html`: variante para clínicas veterinarias
 - `gimnasios/index.html`: variante para gimnasios y centros deportivos
 - `privacidad.html`: política de privacidad
 - `aviso-legal.html`: aviso legal
-- `api/contact.js`: envío seguro del formulario mediante Resend
+- `api/contact.js`: envío seguro del formulario mediante Resend (portada con `sector=General`; páginas sectoriales con su formulario de muestra)
 - `sector.css`: estilos compartidos por las variantes sectoriales
 - `sector-contact.js`: envío del formulario compartido por ambas variantes
 - `process-demo.js`: recorrido interactivo de seis fases compartido por ambas variantes

@@ -5,6 +5,8 @@ const FIELD_LIMITS = {
   email: 160,
   pms: 80,
   analitica: 40,
+  empresa: 120,
+  servicio: 40,
   necesidad: 2000
 };
 
@@ -51,7 +53,10 @@ module.exports = async function contact(req, res) {
     Object.entries(FIELD_LIMITS).map(([name, limit]) => [name, clean(body[name], limit)])
   );
   const validEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(fields.email);
-  const required = fields.nombre && fields.clinica && fields.pms && fields.analitica;
+  const isGeneral = fields.sector === 'General';
+  const required = isGeneral
+    ? fields.nombre && fields.empresa && fields.servicio
+    : fields.nombre && fields.clinica && fields.pms && fields.analitica;
 
   if (!required || !validEmail || body.privacidad !== true) {
     return res.status(400).json({ error: 'Revisa los campos obligatorios y la aceptación de privacidad.' });
@@ -67,21 +72,51 @@ module.exports = async function contact(req, res) {
 
   const safe = Object.fromEntries(Object.entries(fields).map(([key, value]) => [key, escapeHtml(value)]));
   const sector = fields.sector || 'Veterinaria';
-  const subject = `Solicitud ${sector} · ${fields.clinica}`;
-  const text = [
-    `Sector: ${sector}`,
-    `Nombre: ${fields.nombre}`,
-    `Clínica: ${fields.clinica}`,
-    `Correo: ${fields.email}`,
-    `Software de gestión: ${fields.pms}`,
-    `Módulo de analítica: ${fields.analitica}`,
-    '',
-    'Necesidad principal:',
-    fields.necesidad || 'No indicada',
-    '',
-    'La persona ha aceptado la política de privacidad para recibir respuesta a esta solicitud.'
-  ].join('\n');
-  const html = `
+  const consentLine = 'La persona ha aceptado la política de privacidad para recibir respuesta a esta solicitud.';
+  let subject;
+  let text;
+  let html;
+
+  if (isGeneral) {
+    subject = `Proyecto · ${fields.servicio} · ${fields.empresa}`;
+    text = [
+      `Servicio: ${fields.servicio}`,
+      `Nombre: ${fields.nombre}`,
+      `Empresa: ${fields.empresa}`,
+      `Correo: ${fields.email}`,
+      '',
+      'Situación:',
+      fields.necesidad || 'No indicada',
+      '',
+      consentLine
+    ].join('\n');
+    html = `
+    <h2>Nueva solicitud desde la web</h2>
+    <p><strong>Servicio:</strong> ${safe.servicio}</p>
+    <p><strong>Nombre:</strong> ${safe.nombre}</p>
+    <p><strong>Empresa:</strong> ${safe.empresa}</p>
+    <p><strong>Correo:</strong> ${safe.email}</p>
+    <h3>Situación</h3>
+    <p>${safe.necesidad || 'No indicada'}</p>
+    <hr>
+    <p><small>${consentLine}</small></p>
+  `;
+  } else {
+    subject = `Solicitud ${sector} · ${fields.clinica}`;
+    text = [
+      `Sector: ${sector}`,
+      `Nombre: ${fields.nombre}`,
+      `Clínica: ${fields.clinica}`,
+      `Correo: ${fields.email}`,
+      `Software de gestión: ${fields.pms}`,
+      `Módulo de analítica: ${fields.analitica}`,
+      '',
+      'Necesidad principal:',
+      fields.necesidad || 'No indicada',
+      '',
+      consentLine
+    ].join('\n');
+    html = `
     <h2>Nueva solicitud de muestra</h2>
     <p><strong>Sector:</strong> ${safe.sector || 'Veterinaria'}</p>
     <p><strong>Nombre:</strong> ${safe.nombre}</p>
@@ -92,8 +127,9 @@ module.exports = async function contact(req, res) {
     <h3>Necesidad principal</h3>
     <p>${safe.necesidad || 'No indicada'}</p>
     <hr>
-    <p><small>La persona ha aceptado la política de privacidad para recibir respuesta a esta solicitud.</small></p>
+    <p><small>${consentLine}</small></p>
   `;
+  }
 
   try {
     const resendResponse = await fetch('https://api.resend.com/emails', {
